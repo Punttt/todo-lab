@@ -24,6 +24,7 @@ export class TodoList {
 
     // Skapa ett nytt Todo-objekt enligt interfacet
     const newTodo: Todo = {
+      id: Date.now(),
       task,
       completed: false,
       priority
@@ -36,9 +37,10 @@ export class TodoList {
     return true;
   }
 
-  markTodoCompleted(index: number): void {
-    if(this.todos[index]) {
-      this.todos[index].completed = true;
+  markTodoCompleted(id: number): void {
+    const todo = this.todos.find(t => t.id === id);
+    if(todo) {
+      todo.completed = !todo.completed;
       this.saveToLocalStorage();
     }
   }

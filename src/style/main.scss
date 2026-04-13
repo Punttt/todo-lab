@@ -54,34 +54,33 @@ form {
   color: #0a0a0a;
   border-radius: 8px;
 
+  #outputListComp{
+    opacity: 0.6;
+  }
+
   ul {
     list-style: none;
     margin-bottom: 1rem;
 
     li {
       background: #fff;
-      padding: 0.5rem;
+      padding: 0.5rem 1rem;
       margin-bottom: 0.5rem;
+      border-radius: 25px;
       display: flex;
       justify-content: space-between;
-    }
-  }
 
-  #clearList {
-    cursor: pointer;
-    border: none;
-    font: inherit;
-    padding: 0.25rem 0.5rem;
-    background: tomato;
-  }
-  #clearList:hover{
-    opacity: 0.7;
+      input {
+        cursor: pointer;
+      }
+    }
   }
 }
 
 // Colors and fonts
-h1 { margin-bottom: 1rem }
+h1 { margin-bottom: 0.5rem }
 h2 {margin-bottom:0.5rem;}
+p {max-width: 65ch; margin-bottom: 2rem;}
 
 .bg-light{
   background: #fff;
@@ -96,6 +95,19 @@ h2 {margin-bottom:0.5rem;}
   max-width: 900px;
   margin: 0 auto;
   padding: 1rem;
+}
+
+#clearList {
+    cursor: pointer;
+    border: none;
+    font: inherit;
+    padding: 0.25rem 0.5rem;
+    background: tomato;
+    border-radius: 25px;
+}
+
+#clearList:hover{
+  opacity: 0.7;
 }
 
 

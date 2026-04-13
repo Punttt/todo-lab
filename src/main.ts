@@ -9,6 +9,7 @@ const form = document.getElementById("todoForm") as HTMLFormElement;
 const taskInput = document.getElementById("taskInput") as HTMLInputElement;
 const prioritySelect = document.getElementById("prioritySelect") as HTMLSelectElement;
 const outputList = document.getElementById("outputList") as HTMLUListElement;
+const outputListComp = document.getElementById("outputListComp") as HTMLUListElement;
 const clearButton = document.getElementById("clearList") as HTMLButtonElement;
 
 // Renderar local-storage direkt
@@ -40,10 +41,15 @@ clearButton.addEventListener("click", ()=>{
 // Funktioner
 function renderTodos(){
     outputList.innerHTML = "";
+    outputListComp.innerHTML = "";
 
     const todos = todoList.getTodos();
 
-    todos.forEach((todo, index) =>{
+    const active = todos.filter( t => !t.completed);
+    const done = todos.filter( t => t.completed);
+
+    // Rendera aktiva todos.
+    active.forEach((todo, index) =>{
         const li = document.createElement("li");
 
         // Text
@@ -52,20 +58,37 @@ function renderTodos(){
         // Checkbox
         const checkbox = document.createElement("input");
         checkbox.type = "checkbox";
-        checkbox.checked = todo.completed;
+        checkbox.checked = false;
 
         checkbox.addEventListener("change", ()=>{
-            todoList.markTodoCompleted(index);
+            todoList.markTodoCompleted(todo.id);
             renderTodos();
-        })
-
-        // Om todo är klar
-        if(todo.completed) {
-            li.style.opacity = "0.6";
-        }
+        });
 
         // Skriver ut i DOM
         li.appendChild(checkbox);
         outputList.appendChild(li);
-    })
+    });
+
+    // Renderar färdiga todos
+    done.forEach((todo, index) =>{
+        const li = document.createElement("li");
+
+        // Text
+        li.textContent = todo.task;
+
+        // Checkbox
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.checked = true;
+
+        checkbox.addEventListener("change", ()=>{
+            todoList.markTodoCompleted(todo.id);
+            renderTodos();
+        });
+
+        // Skriver ut i DOM
+        li.appendChild(checkbox);
+        outputListComp.appendChild(li);
+    });
 }
