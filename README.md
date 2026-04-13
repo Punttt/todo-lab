@@ -24,7 +24,11 @@ Användaren kan skriva en uppgift och välja prioritet.
 Uppgiften sparas i en todolist-klass och skrivs ut i DOM.
 
 ### Markera todo som är klar
-Varje todo har en checkbox. När den klickas i så uppdateras objektet och sparas om.
+Todos som markeras som klara flyttas automatiskt till en egen lista under “Klart”.
+Checkboxen kan användas för att flytta en todo mellan listorna.
+
+### Unikt id
+Varje todo får ett unikt ID för at tsäkerställa korrekt uppdatering även när listan delas upp.
 
 ### Spara i localStorage
 Alla todos sparar automatiskt i localStorage vid ändring.
@@ -38,11 +42,17 @@ En knapp med id clearList tömmer både localStorage och listan i minnet
 ### Responsiv layout
 Formuläret använder CSS grid och ändrar layout vid 500 pixlar i bredd.
 
+## Utökad Funktionalitet
+Applikationen har utökats med:
+  - separata listor för aktiva och klara todos
+  - unikt ID per todo gör stabil hantering
+  - förbättrad renderingslogik
+
 ## Typer av funktioner
 ### todoList klasser
   - addTodo(task, priority) : lägger till en ny todo
   - getTodos() : returnerar all todos
-  - markTodoCompleted(index) : markerar en todo som klar
+  - markTodoCompleted(id) : varje todo har ett unikt ID som genereras med Date.now()
   - saveToLocalStorage() : sparar listan
   - loadFromLocalStorage() : läser listan
   - clearTodos() : tömmer listan
@@ -67,6 +77,18 @@ Om valideringen misslyckas visas ett felmeddelande med hjälp av alert.
   - Rundade inputfält, knappar samt box shadows
   - Mediaquerie med brytpungt på 500px för CSS grid
   - Knappdesign med hover-effekter
+
+## Mappstruktur
+```
+src/
+  models/
+    Todo.ts
+  classes/
+    TodoList.ts
+  main.ts
+index.html
+style.css
+```
 
 ## Installation
 Klona projektet:
