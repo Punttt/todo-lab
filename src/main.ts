@@ -17,5 +17,17 @@ form.addEventListener("submit", (e)=>{
     const task = taskInput.value;
     const priority = Number(prioritySelect.value);
 
-    console.log("Task: "+ task, ", Prioritet: "  + priority);
-})
+    const success = todoList.addTodo(task, priority);
+
+    // Validerar input
+    if(success){
+        taskInput.value = "";
+        renderTodos();
+    } else {
+        alert("Fel: kontrollera task och prioritet!");
+    }
+});
+
+function renderTodos(){
+    
+}

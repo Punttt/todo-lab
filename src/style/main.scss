@@ -36,10 +36,22 @@ form {
   }
 }
 
+// Output boxen / todolistan
 .output-box{
-  padding: 1rem;
   color: #0a0a0a;
   border-radius: 8px;
+
+  ul {
+    list-style: none;
+
+    li {
+      background: #fff;
+      padding: 0.5rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
 }
 
 // Colors and fonts
