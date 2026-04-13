@@ -1,3 +1,5 @@
 import "./style/main.scss";
 
-import type { TodoList } from "./classes/TodoList";
+import { TodoList } from "./classes/TodoList";
+
+const todoList = new TodoList();
