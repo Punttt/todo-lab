@@ -6,7 +6,27 @@
     <title>todo-lab</title>
   </head>
   <body>
-    <div id="app"></div>
+    <main>
+      <div class="container">
+        <h1>Hello!</h1>
+
+        <form id="todoForm">
+          <input type="text" id="taskInput" placeholder="Skriv en uppgift...">
+          <select name="" id="prioritySelect">
+            <option value="0">Prioritet</option>
+            <option value="1">Hög</option>
+            <option value="2">Mellan</option>
+            <option value="3">Låg</option>
+          </select>
+          <input type="submit" value="Lägg till">
+        </form>
+
+        <h2>Todo:s</h2>
+        <div class="output-box bg-light box-sh">
+          <ul id="outputList"></ul>
+        </div>
+      </div>
+    </main>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
