@@ -6,7 +6,36 @@
     <title>todo-lab</title>
   </head>
   <body>
-    <div id="app"></div>
+    <main>
+      <div class="container">
+        <h1>Hello!</h1>
+        <p>Dags att få ordning på dagen. Skapa dina todos, prioritera smart och checka av när du är klar. Små steg, stor kontroll.</p>
+
+        <form id="todoForm">
+          <input type="text" id="taskInput" placeholder="Skriv en uppgift...">
+          <select name="" id="prioritySelect">
+            <option value="0">Prioritet</option>
+            <option value="1">Hög</option>
+            <option value="2">Mellan</option>
+            <option value="3">Låg</option>
+          </select>
+          <input type="submit" value="Lägg till">
+        </form>
+
+        <h2>Kommande uppgifter:</h2>
+        <div class="output-box">
+          <ul id="outputList"></ul>
+        </div>
+
+        <h2>Färdiga uppgifter:</h2>
+        <div class="output-box">
+          <ul id="outputListComp">
+          </ul>
+        </div>
+
+        <button id="clearList">Rensa listan</button>
+      </div>
+    </main>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
