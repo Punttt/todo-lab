@@ -14,7 +14,7 @@ body {
 }
 
 form {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   display: grid;
   grid-template-areas: "text option button";
   grid-template-columns: 1fr auto auto;
@@ -80,7 +80,7 @@ form {
 
 // Colors and fonts
 h1 { margin-bottom: 1rem }
-h2 {margin-bottom: 0.5rem;}
+h2 {margin-bottom:0.5rem;}
 
 .bg-light{
   background: #fff;
