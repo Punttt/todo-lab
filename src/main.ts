@@ -49,7 +49,7 @@ function renderTodos(){
     const done = todos.filter( t => t.completed);
 
     // Rendera aktiva todos.
-    active.forEach((todo, index) =>{
+    active.forEach((todo) =>{
         const li = document.createElement("li");
 
         // Text
@@ -71,7 +71,7 @@ function renderTodos(){
     });
 
     // Renderar färdiga todos
-    done.forEach((todo, index) =>{
+    done.forEach((todo) =>{
         const li = document.createElement("li");
 
         // Text
