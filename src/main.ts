@@ -10,6 +10,9 @@ const taskInput = document.getElementById("taskInput") as HTMLInputElement;
 const prioritySelect = document.getElementById("prioritySelect") as HTMLSelectElement;
 const outputList = document.getElementById("outputList") as HTMLUListElement;
 
+// Renderar local-storage direkt
+renderTodos();
+
 // Lägger till event-lyssnare till formuläret
 form.addEventListener("submit", (e)=>{
     e.preventDefault();
@@ -48,6 +51,11 @@ function renderTodos(){
             todoList.markTodoCompleted(index);
             renderTodos();
         })
+
+        // Om todo är klar
+        if(todo.completed) {
+            li.style.opacity = "0.6";
+        }
 
         // Skriver ut i DOM
         li.appendChild(checkbox);
