@@ -29,5 +29,28 @@ form.addEventListener("submit", (e)=>{
 });
 
 function renderTodos(){
-    
+    outputList.innerHTML = "";
+
+    const todos = todoList.getTodos();
+
+    todos.forEach((todo, index) =>{
+        const li = document.createElement("li");
+
+        // Text
+        li.textContent = todo.task;
+
+        // Checkbox
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.checked = todo.completed;
+
+        checkbox.addEventListener("change", ()=>{
+            todoList.markTodoCompleted(index);
+            renderTodos();
+        })
+
+        // Skriver ut i DOM
+        li.appendChild(checkbox);
+        outputList.appendChild(li);
+    })
 }

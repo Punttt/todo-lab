@@ -75,3 +75,8 @@ h2 {margin-bottom: 0.5rem;}
 
 
 // Media queries 
+@media (max-width: 500px){
+  body{
+    background: tomato;
+  }
+}
