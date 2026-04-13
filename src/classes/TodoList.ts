@@ -58,6 +58,12 @@ export class TodoList {
       this.todos = JSON.parse(data);
     }
   }
+
+  clearTodos(): void {
+    this.todos = [];
+    this.saveToLocalStorage();
+  }
+
 }
 
 

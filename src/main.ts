@@ -9,11 +9,12 @@ const form = document.getElementById("todoForm") as HTMLFormElement;
 const taskInput = document.getElementById("taskInput") as HTMLInputElement;
 const prioritySelect = document.getElementById("prioritySelect") as HTMLSelectElement;
 const outputList = document.getElementById("outputList") as HTMLUListElement;
+const clearButton = document.getElementById("clearList") as HTMLButtonElement;
 
 // Renderar local-storage direkt
 renderTodos();
 
-// Lägger till event-lyssnare till formuläret
+// Lägger till event-lyssnare
 form.addEventListener("submit", (e)=>{
     e.preventDefault();
 
@@ -31,6 +32,12 @@ form.addEventListener("submit", (e)=>{
     }
 });
 
+clearButton.addEventListener("click", ()=>{
+    todoList.clearTodos();
+    renderTodos();
+})
+
+// Funktioner
 function renderTodos(){
     outputList.innerHTML = "";
 
