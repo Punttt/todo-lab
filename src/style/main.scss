@@ -8,7 +8,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   background-image: linear-gradient(to right, #8338ec , #3a86ff);
   color: #fff;
 }
@@ -75,8 +75,3 @@ h2 {margin-bottom: 0.5rem;}
 
 
 // Media queries 
-@media (max-width: 500px){
-  body{
-    background: tomato;
-  }
-}
