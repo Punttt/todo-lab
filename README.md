@@ -106,5 +106,6 @@ npm run preview
 ```
 
 ### Publicerad webbplats
+Netlify: https://goralista.netlify.app/
 
 Skapad av: Pontus Johansson
